@@ -68,13 +68,18 @@
     <button id="button1"> Submit </button>
 
     </fieldset>
+  
+   <table id="sample1" class="example"  style="width:100%"></table>
+
+    <table>
+
    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script>
    $(document).ready(function(){
        function arrayToTable(tableData) {
-           var table = $('<table></table>')
+           var table = $('<table id="sample1"></table>')
            var tbody = $('<tbody></tbody>');
            var thead = $('<thead></thead>');
            $(tableData).each(function (i, rowData) {
@@ -100,9 +105,18 @@
            type: "GET",
            url: "data/Sample_Data.csv",
            success: function (data) {
-               $('body').append(arrayToTable(Papa.parse(data).data));
+               $('#sample1').append(arrayToTable(Papa.parse(data).data));
            }
-       });
+       }).done(function(){
+            $('#sample1').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'pageLength', 'csv', 'excel', 'pdf', 'print'
+        ],
+        lengthMenu: [
+            [ 10, 25, 50, -1 ],
+            [ '10 rows', '25 rows', '50 rows', '100 rows','Show all']
+        ],
    });
 </script>
   </body>
