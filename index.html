@@ -19,18 +19,18 @@
 
       <select id="account" class="multiple-options" name="states[]" multiple="multiple">
         <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
+        <option value='00200'>00200</option>
+        <option value='00400'>00400</option>
+        <option value='00450'>00450</option>
+        <option value='00460'>00460</option>
+        <option value='00500'>00500</option>
+        <option value='00600'>00600</option>
+        <option value='00700'>00700</option>
+        <option value='00800'>00800</option>
+        <option value='00850'>00850</option>
+        <option value='00870'>00870</option>
+        <option value='00900'>00900</option>
+        <option value='01000'>01000</option>
       </select>
 
       <label>Select All
@@ -41,19 +41,26 @@
 
       <label class="blocklabel">Select Portfolio</label>
       <select id="portfolio" class="multiple-options" name="states[]" multiple="multiple">
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
-        <option value="00100">00100</option>
+        <option value='00100'>001001B</option>
+        <option value='00100'>001002B</option>
+        <option value='00100'>00100ACQ</option>
+        <option value='00100'>00100BR1</option>
+        <option value='00100'>00100BR2</option>
+        <option value='00100'>00100CA</option>
+        <option value='00100'>00100CA2</option>
+        <option value='00100'>00100CL</option>
+        <option value='00100'>00100CR</option>
+        <option value='00200'>00220</option>
+        <option value='00200'>00228</option>
+        <option value='00200'>00230</option>
+        <option value='00200'>00240</option>
+        <option value='00200'>00245</option>
+        <option value='00200'>00248</option>
+        <option value='00700'>00700</option>
+        <option value='00700'>00700CA</option>
+        <option value='00700'>00700ME</option>
+        <option value='00700'>00700NV</option>
+        <option value='00700'>00700TRN</option>
       </select>
 
       <label>
@@ -68,60 +75,44 @@
 
     <table id="datatable" class="example" style="width:100%"></table>
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
     <script  src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/b-1.5.2/b-flash-1.5.2/b-html5-1.5.2/b-print-1.5.2/datatables.min.js"></script>
+    <script "https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script "https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script "https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+    <script "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script "https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script "https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
 
-
+<script>
     <script>
       $(document).ready(function(){
-
         function arrayToTable(tableData) {
-
           const table = $('#datatable');
           const thead = $('<thead></thead>').prependTo(table);
           const tbody = $('<tbody></tbody>').appendTo(table);
-
           $(tableData).each(function (i, rowData) {
             if(i === 0) {
-
               let row = $('<tr></tr>');
-
               $(rowData).each(function (j, cellData) {
                  row.append($('<th>'+cellData+'</th>'));
               });
-
               thead.append(row);
-
             } else {
-
               let row = $('<tr></tr>');
-
               $(rowData).each(function (j, cellData) {
                 if(cellData != '') {
                  row.append($('<td>'+cellData+'</td>'));
                 }
               });
-
               if (row.children().length) {
                 tbody.append(row);
               }
             }
-
           });
-
-          table.DataTable({
-            dom: 'Bfrtip',
-            buttons: ['pageLength', 'csv', 'excel', 'pdf', 'print'],
-            lengthMenu: [[ 10, 25, 50, -1 ],[ '10 rows', '25 rows', '50 rows', '100 rows','Show all' ]]
-          });
-
-        }
-
         $.ajax({
           type: "GET",
           url: "data/Sample_Data.csv",
@@ -129,10 +120,14 @@
             arrayToTable(Papa.parse(data).data);
           }
         });
-
-
+          
+          table.DataTable({
+            dom: 'Bfrtip',
+            buttons: ['pageLength', 'csv', 'excel', 'pdf', 'print'],
+            lengthMenu: [[ 10, 25, 50, -1 ],[ '10 rows', '25 rows', '50 rows', '100 rows','Show all' ]]
+          });
+        }
         $('.multiple-options').select2();
-
         $("#selectall").click(function(event){
           event.stopPropagation();
           if($("#selectall").is(':checked') ){
@@ -142,7 +137,6 @@
             $("#account").val(null).trigger('change');
           }
         });
-
         $("#selectall_2").click(function(event){
           event.stopPropagation();
           if($("#selectall_2").is(':checked') ){
@@ -152,9 +146,7 @@
             $("#portfolio").val(null).trigger('change');
           }
         });
-
         $("#button1").prop('disabled',true);
-
         $('.multiple-options').change(function() {
           if ($('.multiple-options').val() == 0) {
             $("#button1").prop('disabled',true);
@@ -162,8 +154,6 @@
             $("#button1").prop('disabled',false);
           }
         });
-
-
         $("#account").change(function() {
           if ($(this).data('options') === undefined) {
             /*Taking an array of all options-2 and kind of embedding it on the select1*/
@@ -173,7 +163,6 @@
           var options = $(this).data('options').filter('[value=' + id + ']');
           $('#portfolio').html(options);
         });
-
       });
     </script>
   </body>
