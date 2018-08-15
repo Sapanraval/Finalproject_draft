@@ -29,7 +29,7 @@ body, html {
 }
 
 body {
-    background: none; url(../img/Liberty_back.jpg);
+    background: url(../img/Liberty_back.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -53,16 +53,7 @@ fieldset {
 
 
 
-    .dataTables_wrapper {
-      border: #ccc solid 1px;
-      padding: 2rem;
-      margin-top: 2rem;
-      margin-left: 3rem;
-      margin-bottom: 2rem;
-      width: 90%;
-      color: #ccc;
-      background-color: #002663;
-    }
+
 
 form{
 	display: inline;
@@ -101,14 +92,14 @@ form{
 
 	margin-top: 1rem;
 	margin-left: 4rem;
-	width: 60%;
+	width: 80%;
 }
 
 #portfolio{
 
 	margin-top: 1rem;
 	margin-left: 4rem;
-	width: 60%;
+	width: 80%;
 }
 
 
@@ -143,9 +134,112 @@ table.dataTable {
   text-align: left;
 }
 
-table.dataTable{
+table.dataTable tbody tr {
     background-color: #5381ac;
     color: #ccc;
     border-top: #ccc solid;
      }
-     
+
+   .dataTables_wrapper .dataTables_paginate .paginate_button{
+      color: #ccc !important;
+      border-radius: 2px; }
+
+      .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+        color: #ccc !important;}
+
+        .dataTables_wrapper .dataTables_paginate {
+
+        	color: #ccc; }
+
+      .dataTables_wrapper {
+      border: #ccc solid 1px;
+      padding: 2rem;
+      margin-top: 2rem;
+      margin-left: 3rem;
+      margin-bottom: 2rem;
+      width: 90%;
+      color: #ccc;
+      background-color: #002663;
+      text-decoration-color: #ccc;
+    }
+
+   .dataTables_wrapper .dataTables_filter{
+
+   	color: #ccc;
+   }
+
+   .dataTables_wrapper .dataTables_info {
+
+   	color: #ccc;
+   }
+
+
+   // VARIABLES
+// color - http://www.colorion.co/palette/685
+$white : #FAFDFE;
+$grey : #564F4C;
+$blue-1 : #55D0FB;
+$blue-1-dk : #23c2fa;
+$blue-2 : #9DD6F3;
+
+$text-color-dark : #564F4C;
+$border-color : #564F4C;
+
+// BASICS
+* {
+  box-sizing: border-box;
+}
+Body {
+  padding: .5em;
+  color: $text-color-dark;
+  background: $white;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: .5em;
+  font-size: .87em;
+  font-weight: bold;
+  font-size: 15px;
+}
+select,
+li {
+  font-size: 18px;
+}
+
+// MULTISELECT STYLES
+.customselect {
+  display: none;
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid $border-color;
+    
+    li {
+      display: block;
+      margin: 0;
+      padding: .5em;
+      border-bottom: 1px solid $white;
+      
+      &:hover {
+        cursor: pointer;
+        background: $blue-1-dk;
+      }
+    }
+  }  
+}
+li.selected {
+  background: $blue-1;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+
+.big-drop {
+  width: 600px !important
+
+}
