@@ -176,14 +176,14 @@ table.dataTable tbody tr {
 
    // VARIABLES
 // color - http://www.colorion.co/palette/685
-$white : #FAFDFE;
+/* $white : #FAFDFE;
 $grey : #564F4C;
 $blue-1 : #55D0FB;
 $blue-1-dk : #23c2fa;
 $blue-2 : #9DD6F3;
 
 $text-color-dark : #564F4C;
-$border-color : #564F4C;
+$border-color : #564F4C; */
 
 // BASICS
 * {
