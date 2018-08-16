@@ -562,9 +562,11 @@
     <script>
       $(document).ready(function(){
 
+      let table = $('#datatable');
+      let api;
+
         function arrayToTable(tableData) {
 
-          const table = $('#datatable');
           const thead = $('<thead></thead>').prependTo(table);
           const tbody = $('<tbody></tbody>').appendTo(table);
 
@@ -598,8 +600,11 @@
 
           table.DataTable({
             dom: 'Bfrtip',
-            buttons: ['pageLength', 'copy', 'csv', 'excel', 'pdf', 'print'],
-            lengthMenu: [[ 10, 25, 50, -1 ],[ '10 rows', '25 rows', '50 rows', '100 rows','Show all' ]]
+            buttons: ['pageLength', 'csv', 'excel', 'pdf', 'print'],
+            lengthMenu: [[ 10, 25, 50, -1 ],[ '10 rows', '25 rows', '50 rows', '100 rows','Show all' ]],
+            initComplete: function(){
+              api = this.api();
+            }
           });
 
         }
@@ -654,6 +659,8 @@
           var id = $(this).val();
           var options = $(this).data('options').filter('[value=' + id + ']');
           $('#portfolio').html(options);
+
+          api.search($(this).val()[0]).draw();
         });
 
       });
