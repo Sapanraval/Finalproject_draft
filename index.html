@@ -561,8 +561,6 @@
 
     <script>
       $(document).ready(function(){
-      let table = $('#datatable');
-      let api;
         function arrayToTable(tableData) {
           const thead = $('<thead></thead>').prependTo(table);
           const tbody = $('<tbody></tbody>').appendTo(table);
@@ -636,9 +634,20 @@
           var id = $(this).val();
           var options = $(this).data('options').filter('[value=' + id + ']');
           $('#portfolio').html(options);
-          api.search($(this).val()[0]).draw();
-        });
       });
     </script>
+    
+    <script>
+  
+  $(document).ready(function() {
+    var oTable = $('#sample1').DataTable();
+    $('#button1').click(function () {
+        oTable.search($("#account").val()).draw();
+    });
+
+    });
+
+</script>
+    
   </body>
 </html>
