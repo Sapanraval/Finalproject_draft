@@ -660,10 +660,9 @@
           var id = $(this).val();
           var options = $(this).data('options').filter('[value=' + id + ']');
           $('#portfolio').html(options);
-
-          $('#button1').on('click', function () {
-	        api.search($(this).val()[0]).draw();
-        });
+		
+	  api.search($(this).val()[0]).draw();
+        
 
       });
     </script>
