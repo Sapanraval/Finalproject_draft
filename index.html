@@ -660,7 +660,9 @@
           var options = $(this).data('options').filter('[value=' + id + ']');
           $('#portfolio').html(options);
 
-          api.search($(this).val()[0]).draw();
+          $('#button1').on('click', function () {
+	        api.search($(this).val()[0]).draw();
+	}
         });
 
       });
