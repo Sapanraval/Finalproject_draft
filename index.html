@@ -640,13 +640,19 @@
           $('#portfolio').html(options);
         });
 
-        var oTable = $('#datatable').DataTable();
-        $('#button1').click(function () {
-        oTable.search($("#account").val()).draw();
-
-        });
-
     });
+
+</script>
+    
+    <script>
+  
+  $(document).ready(function() {
+    var oTable = $('#datatable').DataTable();
+    $('#button1').click(function () {
+        oTable.search($("#account").val()).draw();
+    });
+
+     });
 
 </script>
     
