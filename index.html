@@ -633,9 +633,9 @@
           var options = $(this).data('options').filter('[value=' + id + ']');
           $('#portfolio').html(options);
         });
-    var oTable = $('#datatable').DataTable();
+
     $('#button1').click(function () {
-        oTable.search($("#account").val()).draw();
+        DataTable.search($("#account").val()).draw();
     });
 
     });
