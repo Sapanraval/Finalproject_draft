@@ -16,7 +16,7 @@
       <h1>Account & Portfolio</h1>
     </header>
 
-    <fieldset autoRun="false" button="true">
+    <fieldset>
       <label class="blocklabel">Select Account</label>
 
       <select id="account" class="multiple-options" name="states[]" multiple="multiple">
@@ -561,55 +561,39 @@
 
     <script>
       $(document).ready(function(){
-
       let table = $('#datatable');
       let api;
-
         function arrayToTable(tableData) {
-
           const thead = $('<thead></thead>').prependTo(table);
           const tbody = $('<tbody></tbody>').appendTo(table);
-
           $(tableData).each(function (i, rowData) {
             if(i === 0) {
-
               let row = $('<tr></tr>');
-
               $(rowData).each(function (j, cellData) {
                  row.append($('<th>'+cellData+'</th>'));
               });
-
               thead.append(row);
-
             } else {
-
               let row = $('<tr></tr>');
-
               $(rowData).each(function (j, cellData) {
                 if(cellData != '') {
                  row.append($('<td>'+cellData+'</td>'));
                 }
               });
-
               if (row.children().length) {
                 tbody.append(row);
               }
             }
-
           });
-
           table.DataTable({
             dom: 'Bfrtip',
             buttons: ['pageLength', 'csv', 'excel', 'pdf', 'print'],
             lengthMenu: [[ 10, 25, 50, -1 ],[ '10 rows', '25 rows', '50 rows', '100 rows','Show all' ]],
-   
-	      initComplete: function(){
+            initComplete: function(){
               api = this.api();
             }
           });
-
         }
-
         $.ajax({
           type: "GET",
           url: "data/Sample_Data.csv",
@@ -617,10 +601,7 @@
             arrayToTable(Papa.parse(data).data);
           }
         });
-
-
         $('.multiple-options').select2();
-
         $("#selectall").click(function(event){
           event.stopPropagation();
           if($("#selectall").is(':checked') ){
@@ -630,7 +611,6 @@
             $("#account").val(null).trigger('change');
           }
         });
-
         $("#selectall_2").click(function(event){
           event.stopPropagation();
           if($("#selectall_2").is(':checked') ){
@@ -640,9 +620,7 @@
             $("#portfolio").val(null).trigger('change');
           }
         });
-
         $("#button1").prop('disabled',true);
-
         $('.multiple-options').change(function() {
           if ($('.multiple-options').val() == 0) {
             $("#button1").prop('disabled',true);
@@ -650,8 +628,6 @@
             $("#button1").prop('disabled',false);
           }
         });
-
-
         $("#account").change(function() {
           if ($(this).data('options') === undefined) {
             /*Taking an array of all options-2 and kind of embedding it on the select1*/
@@ -660,10 +636,8 @@
           var id = $(this).val();
           var options = $(this).data('options').filter('[value=' + id + ']');
           $('#portfolio').html(options);
-		
-	  api.search($(this).val()[0]).draw();
-        
-
+          api.search($(this).val()[0]).draw();
+        });
       });
     </script>
   </body>
