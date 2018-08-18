@@ -635,5 +635,19 @@
         });
       });
     </script>
+    
+    
+    <script>
+  
+  $(document).ready(function() {
+    var oTable = $('#sample1').DataTable();
+    $('#button1').click(function () {
+        oTable.search($("#account").val()).draw();
+    });
+
+    });
+
+</script>
+    
   </body>
 </html>
