@@ -1,137 +1,655 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta = charset="UFT-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
     <title>Account & Portfolio Mapping</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css"/>
     <link rel="stylesheet" href="css/styles.css">
   </head>
- <body>
-  <header>
-    
-    <h1>Account & Portfolio</h1>
-  </header>
+  <body>
+    <header>
+      <h1>Account & Portfolio</h1>
+    </header>
 
- 
     <fieldset>
-    <label class="blocklabel">Select Account</label>
-    <select id="account" class="multiple-options" name="states[]" multiple="multiple">
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-    </select>
+      <label class="blocklabel">Select Account</label>
+
+      <select id="account" class="multiple-options" name="states[]" multiple="multiple">
+        <option value='00100'>00100</option>
+        <option value='00200'>00200</option>
+        <option value='00400'>00400</option>
+        <option value='00450'>00450</option>
+        <option value='00460'>00460</option>
+        <option value='00500'>00500</option>
+        <option value='00600'>00600</option>
+        <option value='00700'>00700</option>
+        <option value='00800'>00800</option>
+        <option value='00850'>00850</option>
+        <option value='00870'>00870</option>
+        <option value='00900'>00900</option>
+        <option value='01000'>01000</option>
+        <option value='0100E'>0100E</option>
+        <option value='01400'>01400</option>
+        <option value='01500'>01500</option>
+        <option value='01600'>01600</option>
+        <option value='01700'>01700</option>
+        <option value='02000'>02000</option>
+        <option value='02200'>02200</option>
+        <option value='02220'>02220</option>
+        <option value='02300'>02300</option>
+        <option value='02302'>02302</option>
+        <option value='02303'>02303</option>
+        <option value='02400'>02400</option>
+        <option value='02600'>02600</option>
+        <option value='0265E'>0265E</option>
+        <option value='0269E'>0269E</option>
+        <option value='0271E'>0271E</option>
+        <option value='0275E'>0275E</option>
+        <option value='02900'>02900</option>
+        <option value='0295E'>0295E</option>
+        <option value='03000'>03000</option>
+        <option value='04800'>04800</option>
+        <option value='04900'>04900</option>
+        <option value='05000'>05000</option>
+        <option value='06000'>06000</option>
+        <option value='06500'>06500</option>
+        <option value='07000'>07000</option>
+        <option value='ARG-REIN'>ARG-REIN</option>
+        <option value='ARG-SEG'>ARG-SEG </option>
+        <option value='ARGINTL'>ARGINTL </option>
+        <option value='ARGRISK'>ARGRISK </option>
+        <option value='BRAZIL-L'>BRAZIL-L</option>
+        <option value='BRAZIL-M'>BRAZIL-M</option>
+        <option value='BROOKE'>BROOKE  </option>
+        <option value='BRZLLTDA'>BRZLLTDA</option>
+        <option value='CHILE1'>CHILE1  </option>
+        <option value='IBERIA'>IBERIA  </option>
+        <option value='INDSEG'>INDSEG  </option>
+        <option value='IRONEL'>IRONEL  </option>
+        <option value='IRONI'>IRONI</option>
+        <option value='LALIBRTD'>LALIBRTD</option>
+        <option value='LBSRTYMX'>LBSRTYMX</option>
+        <option value='LIB-ARG'>LIB-ARG </option>
+        <option value='LIBMETAL'>LIBMETAL</option>
+        <option value='LIBSVIDA'>LIBSVIDA</option>
+        <option value='LMMCADHD'>LMMCADHD</option>
+        <option value='LMMCANRS'>LMMCANRS</option>
+        <option value='LMMEXLLC'>LMMEXLLC</option>
+        <option value='LMTOLLC'>LMTOLLC </option>
+        <option value='PERU'>PERU </option>
+        <option value='PRPAC'>PRPAC</option>
+        <option value='SINGAPOR'>SINGAPOR</option>
+        <option value='SJALP'>SJALP</option>
+        <option value='UNIASIA'>UNIASIA </option>
+        <option value='VENEZ-B'>VENEZ-B </option>
+        <option value='VNLILTD'>VNLILTD </option>
+      </select>
+
+      <label>Select All
+        <input type="checkbox" id="selectall">
+      </label>
+
+
+
+      <label class="blocklabel">Select Portfolio</label>
+      <select id="portfolio" class="multiple-options" name="states[]" multiple="multiple">
+        <option value='00100'>00100</option>
+        <option value='00100'>001001B</option>
+        <option value='00100'>001002B</option>
+        <option value='00100'>00100ACQ</option>
+        <option value='00100'>00100BR1</option>
+        <option value='00100'>00100BR2</option>
+        <option value='00100'>00100CA</option>
+        <option value='00100'>00100CA2</option>
+        <option value='00100'>00100CL</option>
+        <option value='00100'>00100CR</option>
+        <option value='00100'>00100CS</option>
+        <option value='00100'>00100DE8</option>
+        <option value='00100'>00100DP</option>
+        <option value='00100'>00100DP3</option>
+        <option value='00100'>00100EI7</option>
+        <option value='00100'>00100EQ</option>
+        <option value='00100'>00100FD</option>
+        <option value='00100'>00100FP</option>
+        <option value='00100'>00100G</option>
+        <option value='00100'>00100HY</option>
+        <option value='00100'>00100LDB</option>
+        <option value='00100'>00100LI7</option>
+        <option value='00100'>00100LIQ</option>
+        <option value='00100'>00100M</option>
+        <option value='00100'>00100ME</option>
+        <option value='00100'>00100MEL</option>
+        <option value='00100'>00100NWD</option>
+        <option value='00100'>00100NY</option>
+        <option value='00100'>00100PCD</option>
+        <option value='00100'>00100PP7</option>
+        <option value='00100'>00100RC</option>
+        <option value='00100'>00100RP</option>
+        <option value='00100'>00100SC</option>
+        <option value='00100'>00100SL</option>
+        <option value='00100'>00100TRC</option>
+        <option value='00100'>00100TRN</option>
+        <option value='00100'>00100TX</option>
+        <option value='00100'>00100WG7</option>
+        <option value='00100'>00103</option>
+        <option value='00100'>00104</option>
+        <option value='00100'>00105</option>
+        <option value='00100'>00106</option>
+        <option value='00100'>00107</option>
+        <option value='00100'>00108</option>
+        <option value='00100'>00109</option>
+        <option value='00100'>0010TMPG</option>
+        <option value='00100'>0010USCO</option>
+        <option value='00100'>00110</option>
+        <option value='00100'>00110T</option>
+        <option value='00100'>00112</option>
+        <option value='00100'>00112T</option>
+        <option value='00100'>00120</option>
+        <option value='00100'>00121</option>
+        <option value='00100'>00122</option>
+        <option value='00100'>00123</option>
+        <option value='00100'>00124</option>
+        <option value='00100'>00127</option>
+        <option value='00100'>00128</option>
+        <option value='00100'>00130</option>
+        <option value='00100'>00135</option>
+        <option value='00100'>00140</option>
+        <option value='00100'>00148</option>
+        <option value='00100'>00149</option>
+        <option value='00100'>00150</option>
+        <option value='00100'>00155</option>
+        <option value='00100'>00159</option>
+        <option value='00100'>00160</option>
+        <option value='00100'>00165</option>
+        <option value='00100'>00170</option>
+        <option value='00100'>00172</option>
+        <option value='00100'>00173</option>
+        <option value='00100'>00175</option>
+        <option value='00100'>00176</option>
+        <option value='00100'>00180</option>
+        <option value='00100'>00185</option>
+        <option value='00100'>00186</option>
+        <option value='00100'>00188</option>
+        <option value='00100'>00189</option>
+        <option value='00100'>00190</option>
+        <option value='00100'>001ARCH</option>
+        <option value='00100'>001AU</option>
+        <option value='00100'>001CHIM</option>
+        <option value='00100'>001CHIM3</option>
+        <option value='00100'>001CLMET</option>
+        <option value='00100'>001CLPRU</option>
+        <option value='00100'>001COLTR</option>
+        <option value='00100'>001CORP</option>
+        <option value='00100'>001CSPR</option>
+        <option value='00100'>001EMTR</option>
+        <option value='00100'>001EMTRG</option>
+        <option value='00100'>001FAL</option>
+        <option value='00100'>001FMAC</option>
+        <option value='00100'>001FNMA2</option>
+        <option value='00100'>001GBSL</option>
+        <option value='00100'>001HKLCB</option>
+        <option value='00100'>001LBC</option>
+        <option value='00100'>001MBS</option>
+        <option value='00100'>001MUNI</option>
+        <option value='00100'>001NPGC</option>
+        <option value='00100'>001PHYST</option>
+        <option value='00100'>001TRANS</option>
+        <option value='00100'>01LITMPG</option>
+        <option value='00200'>00200</option>
+        <option value='00200'>002001B</option>
+        <option value='00200'>002002B</option>
+        <option value='00200'>00200CA</option>
+        <option value='00200'>00200CS</option>
+        <option value='00200'>00200DE8</option>
+        <option value='00200'>00200EQ</option>
+        <option value='00200'>00200ETF</option>
+        <option value='00200'>00200F</option>
+        <option value='00200'>00200FP</option>
+        <option value='00200'>00200FP1</option>
+        <option value='00200'>00200G</option>
+        <option value='00200'>00200JPY</option>
+        <option value='00200'>00200ME</option>
+        <option value='00200'>00200PR</option>
+        <option value='00200'>00200SC</option>
+        <option value='00200'>00200SL</option>
+        <option value='00200'>00200TRN</option>
+        <option value='00200'>00208</option>
+        <option value='00200'>00209</option>
+        <option value='00200'>0020TMPG</option>
+        <option value='00200'>00220</option>
+        <option value='00200'>00228</option>
+        <option value='00200'>00230</option>
+        <option value='00200'>00240</option>
+        <option value='00200'>00245</option>
+        <option value='00200'>00248</option>
+        <option value='00200'>00249</option>
+        <option value='00200'>00250</option>
+        <option value='00200'>00259</option>
+        <option value='00200'>00260</option>
+        <option value='00200'>00272</option>
+        <option value='00200'>00275</option>
+        <option value='00200'>00280</option>
+        <option value='00200'>00288</option>
+        <option value='00200'>00290</option>
+        <option value='00200'>002AU</option>
+        <option value='00200'>002CLMET</option>
+        <option value='00200'>002CLPRU</option>
+        <option value='00200'>002CORP</option>
+        <option value='00200'>002EMTR</option>
+        <option value='00200'>002EMTRG</option>
+        <option value='00200'>002MBS</option>
+        <option value='00200'>002MUNI</option>
+        <option value='00400'>00400</option>
+        <option value='00400'>00400CA</option>
+        <option value='00400'>00400TRN</option>
+        <option value='00400'>00488</option>
+        <option value='00400'>00490</option>
+        <option value='00450'>00450</option>
+        <option value='00450'>00450TRN</option>
+        <option value='00460'>00460</option>
+        <option value='00460'>00460TRN</option>
+        <option value='00500'>00500</option>
+        <option value='00500'>005001B</option>
+        <option value='00500'>005002B</option>
+        <option value='00500'>00500CA</option>
+        <option value='00500'>00500CA7</option>
+        <option value='00500'>00500ME</option>
+        <option value='00500'>00500PR</option>
+        <option value='00500'>00500SL</option>
+        <option value='00500'>00500TN</option>
+        <option value='00500'>00500TRN</option>
+        <option value='00500'>00500TX</option>
+        <option value='00500'>0050TMPG</option>
+        <option value='00500'>00588</option>
+        <option value='00500'>00590</option>
+        <option value='00600'>00600</option>
+        <option value='00600'>00600CA</option>
+        <option value='00600'>00600IE</option>
+        <option value='00600'>00600ME</option>
+        <option value='00600'>00600NV</option>
+        <option value='00600'>00600TRN</option>
+        <option value='00700'>00700</option>
+        <option value='00700'>00700CA</option>
+        <option value='00700'>00700ME</option>
+        <option value='00700'>00700NV</option>
+        <option value='00700'>00700TRN</option>
+        <option value='00800'>00800</option>
+        <option value='00850'>00850</option>
+        <option value='00850'>00851</option>
+        <option value='00870'>00870</option>
+        <option value='00900'>00900</option>
+        <option value='01000'>01000</option>
+        <option value='01000'>01001</option>
+        <option value='0100E'>0100E</option>
+        <option value='01400'>01400</option>
+        <option value='01500'>01500</option>
+        <option value='01600'>01600</option>
+        <option value='01700'>01700</option>
+        <option value='02000'>02000</option>
+        <option value='02200'>02200</option>
+        <option value='02220'>02220</option>
+        <option value='02220'>02220TRN</option>
+        <option value='02220'>02221</option>
+        <option value='02220'>02222</option>
+        <option value='02220'>02223</option>
+        <option value='02300'>02300</option>
+        <option value='02302'>02302</option>
+        <option value='02303'>02303</option>
+        <option value='02400'>02400</option>
+        <option value='02600'>02600</option>
+        <option value='0265E'>0265E</option>
+        <option value='0269E'>0269E</option>
+        <option value='0271E'>0271E</option>
+        <option value='0275E'>0275E</option>
+        <option value='02900'>02900</option>
+        <option value='02900'>02900NY</option>
+        <option value='02900'>02900TRN</option>
+        <option value='02900'>0290TMPG</option>
+        <option value='02900'>02990</option>
+        <option value='0295E'>0295E</option>
+        <option value='03000'>03000</option>
+        <option value='03000'>03000F</option>
+        <option value='03000'>03000LIQ</option>
+        <option value='03000'>03000MEL</option>
+        <option value='03000'>03000TRN</option>
+        <option value='03000'>03010</option>
+        <option value='03000'>03010T</option>
+        <option value='03000'>03088</option>
+        <option value='03000'>03090</option>
+        <option value='03000'>030CLMET</option>
+        <option value='03000'>030CLPRU</option>
+        <option value='03000'>03100</option>
+        <option value='03000'>031001B</option>
+        <option value='03000'>031002B</option>
+        <option value='03000'>03100G</option>
+        <option value='03000'>03188</option>
+        <option value='03000'>031CLMET</option>
+        <option value='03000'>031CLPRU</option>
+        <option value='03000'>03200</option>
+        <option value='03000'>03300</option>
+        <option value='03000'>033001B</option>
+        <option value='03000'>033002B</option>
+        <option value='03000'>03300CS</option>
+        <option value='03000'>03300G</option>
+        <option value='03000'>03300SL</option>
+        <option value='03000'>0330TMPG</option>
+        <option value='03000'>03388</option>
+        <option value='03000'>033CLMET</option>
+        <option value='03000'>033CLPRU</option>
+        <option value='03000'>03400</option>
+        <option value='03000'>034001B</option>
+        <option value='03000'>034002B</option>
+        <option value='03000'>03400CS</option>
+        <option value='03000'>03400G</option>
+        <option value='03000'>03488</option>
+        <option value='03000'>034CLMET</option>
+        <option value='03000'>034CLPRU</option>
+        <option value='03000'>03500</option>
+        <option value='03000'>03600</option>
+        <option value='03000'>03700</option>
+        <option value='03000'>03788</option>
+        <option value='03000'>037CLMET</option>
+        <option value='03000'>037CLPRU</option>
+        <option value='03000'>03800</option>
+        <option value='03000'>0380TMPG</option>
+        <option value='03000'>03875</option>
+        <option value='03000'>03888</option>
+        <option value='03000'>03890</option>
+        <option value='03000'>03900</option>
+        <option value='03000'>03988</option>
+        <option value='03000'>039CLMET</option>
+        <option value='03000'>039CLPRU</option>
+        <option value='04800'>04800</option>
+        <option value='04900'>04900</option>
+        <option value='05000'>05000AE</option>
+        <option value='05000'>05000ETF</option>
+        <option value='05000'>05000JPY</option>
+        <option value='05000'>05000LT</option>
+        <option value='05000'>05000OL</option>
+        <option value='05000'>05000OL2</option>
+        <option value='05000'>05000TRN</option>
+        <option value='05000'>05100</option>
+        <option value='05000'>05188</option>
+        <option value='05000'>05190</option>
+        <option value='05000'>05200</option>
+        <option value='05000'>05201</option>
+        <option value='05000'>0520TMPG</option>
+        <option value='05000'>05220</option>
+        <option value='05000'>05225</option>
+        <option value='05000'>05230</option>
+        <option value='05000'>05240</option>
+        <option value='05000'>05245</option>
+        <option value='05000'>05249</option>
+        <option value='05000'>05259</option>
+        <option value='05000'>05390</option>
+        <option value='05000'>05395</option>
+        <option value='05000'>05420</option>
+        <option value='05000'>05501</option>
+        <option value='05000'>05502</option>
+        <option value='05000'>055021B</option>
+        <option value='05000'>055022B</option>
+        <option value='05000'>05503AE</option>
+        <option value='05000'>05503AED</option>
+        <option value='05000'>05503IC</option>
+        <option value='05000'>05503LS</option>
+        <option value='05000'>05503SG</option>
+        <option value='05000'>05505</option>
+        <option value='05000'>05510</option>
+        <option value='05000'>05511P</option>
+        <option value='05000'>05512P</option>
+        <option value='05000'>05513P</option>
+        <option value='05000'>05514P</option>
+        <option value='05000'>05515</option>
+        <option value='05000'>05516P</option>
+        <option value='05000'>05521</option>
+        <option value='05000'>05522</option>
+        <option value='05000'>05523</option>
+        <option value='05000'>05524</option>
+        <option value='05000'>05525</option>
+        <option value='05000'>05526</option>
+        <option value='05000'>055288</option>
+        <option value='05000'>055290</option>
+        <option value='05000'>05530</option>
+        <option value='05000'>05535</option>
+        <option value='05000'>05537</option>
+        <option value='05000'>05538</option>
+        <option value='05000'>05540</option>
+        <option value='05000'>05591</option>
+        <option value='05000'>055GAM</option>
+        <option value='05000'>055LSP4</option>
+        <option value='05000'>055LSP5</option>
+        <option value='05000'>055NDBT</option>
+        <option value='05000'>055NUME</option>
+        <option value='05000'>05690</option>
+        <option value='05000'>05695</option>
+        <option value='05000'>05700</option>
+        <option value='05000'>05790</option>
+        <option value='05000'>05890</option>
+        <option value='05000'>05900</option>
+        <option value='05000'>GLBOPPTR</option>
+        <option value='05000'>LMGT88</option>
+        <option value='05000'>LMGT90</option>
+        <option value='05000'>LMGTARRW</option>
+        <option value='05000'>LMGTBGEU</option>
+        <option value='05000'>LMGTCS</option>
+        <option value='05000'>LMGTESM</option>
+        <option value='05000'>LMGTEURP</option>
+        <option value='05000'>LMGTGSAM</option>
+        <option value='05000'>LMGTGSCP</option>
+        <option value='05000'>LMGTNUME</option>
+        <option value='05000'>LMGTSD</option>
+        <option value='05000'>LMGTSL</option>
+        <option value='05000'>LMGTSP5E</option>
+        <option value='05000'>LMGTSTEU</option>
+        <option value='06000'>06000</option>
+        <option value='06500'>06500</option>
+        <option value='06500'>06500TRN</option>
+        <option value='07000'>07000</option>
+        <option value='07000'>07000TRN</option>
+        <option value='ARG-REIN'>ARG-REIN</option>
+        <option value='ARG-REIN'>ARGREWC</option>
+        <option value='ARG-SEG'>ARGCORP</option>
+        <option value='ARG-SEG'>ARGCORP</option>
+        <option value='ARG-SEG'>ARGGLOBL</option>
+        <option value='ARG-SEG'>ARGGOVLN</option>
+        <option value='ARG-SEG'>ARGSEGWC</option>
+        <option value='ARG-SEG'>ARSEGSUR</option>
+        <option value='ARGINTL'>ARGINTWC</option>
+        <option value='ARGRISK'>ARGRISWC</option>
+        <option value='BRAZIL-L'>BRAZIL-B</option>
+        <option value='BRAZIL-L'>BRAZIL-L</option>
+        <option value='BRAZIL-M'>BRAZIL-M</option>
+        <option value='BROOKE'>BROOKE</option>
+        <option value='BRZLLTDA'>BRZLLTDA</option>
+        <option value='CHILE1'>CHILE1</option>
+        <option value='CHILE1'>CHILE1WC</option>
+        <option value='CHILE1'>CHILEST</option>
+        <option value='IBERIA'>IBERIA</option>
+        <option value='INDSEG'>BRAZILIS</option>
+        <option value='INDSEG'>INDSEGCD</option>
+        <option value='INDSEG'>INDSEGWC</option>
+        <option value='IRONEL'>IRONEL</option>
+        <option value='IRONEL'>IRONELE</option>
+        <option value='IRONEL'>IRONELN</option>
+        <option value='IRONEL'>IRONELS</option>
+        <option value='IRONEL'>IRONELU</option>
+        <option value='IRONEL'>ISONEL</option>
+        <option value='IRONEL'>ISONELE</option>
+        <option value='IRONEL'>ISONELN</option>
+        <option value='IRONEL'>ISONELS</option>
+        <option value='IRONI'>IRNITRN</option>
+        <option value='IRONI'>IRONIAWA</option>
+        <option value='IRONI'>IRONIBR</option>
+        <option value='IRONI'>IRONID</option>
+        <option value='IRONI'>IRONIDE</option>
+        <option value='IRONI'>IRONIFEQ</option>
+        <option value='IRONI'>IRONIFHB</option>
+        <option value='IRONI'>IRONIGR</option>
+        <option value='IRONI'>ISONIAWA</option>
+        <option value='IRONI'>ISONIBR</option>
+        <option value='IRONI'>ISONID</option>
+        <option value='IRONI'>ISONIDE</option>
+        <option value='IRONI'>ISONIFEQ</option>
+        <option value='IRONI'>ISONIFHB</option>
+        <option value='IRONI'>ISONIGR</option>
+        <option value='IRONI'>ISONIPS</option>
+        <option value='LALIBRTD'>LALIBBON</option>
+        <option value='LALIBRTD'>LALIBEQ</option>
+        <option value='LBSRTYMX'>LBSRTYMX</option>
+        <option value='LIB-ARG'>ARG-GLOB</option>
+        <option value='LIB-ARG'>ARG-GOVL</option>
+        <option value='LIB-ARG'>ARG-SURP</option>
+        <option value='LIBMETAL'>LIBMETAL</option>
+        <option value='LIBMETAL'>LIBMETLF</option>
+        <option value='LIBMETAL'>LMMEQUI</option>
+        <option value='LIBMETAL'>LMMFEQU</option>
+        <option value='LIBSVIDA'>LATLFBON</option>
+        <option value='LIBSVIDA'>LATLFEQ</option>
+        <option value='LIBSVIDA'>LATLFST</option>
+        <option value='LIBSVIDA'>LATLFTRD</option>
+        <option value='LMMCADHD'>LMMCADHD</option>
+        <option value='LMMCADHD'>LMMUSDHD</option>
+        <option value='LMMCANRS'>LMMCAN</option>
+        <option value='LMMCANRS'>LMMCANRS</option>
+        <option value='LMMEXLLC'>LMMEXLLC</option>
+        <option value='LMTOLLC'>LMTOLLC</option>
+        <option value='LMTOLLC'>OICS</option>
+        <option value='LMTOLLC'>OIGPMI</option>
+        <option value='PERU'>LSPERU</option>
+        <option value='PERU'>PERUWC</option>
+        <option value='PRPAC'>PRPAC</option>
+        <option value='PRPAC'>PRPACCA</option>
+        <option value='PRPAC'>PRPACTRN</option>
+        <option value='SINGAPOR'>SINGAFS</option>
+        <option value='SINGAPOR'>SINGAPOR</option>
+        <option value='SINGAPOR'>SINGCC</option>
+        <option value='SINGAPOR'>SINGWC</option>
+        <option value='SINGAPOR'>SINPOIF</option>
+        <option value='SJALP'>SJALP</option>
+        <option value='UNIASIA'>MALAY-LB</option>
+        <option value='UNIASIA'>MALAY-WC</option>
+        <option value='VENEZ-B'>VENEZ-B</option>
+        <option value='VNLILTD'>VNSURP</option>
+        <option value='VNLILTD'>VNWCAP</option>
+      </select>
 
       <label>
-      Select All</label>
-      <input type="checkbox" id="selectall">
-     
+        Select All
+        <input type="checkbox" id="selectall_2">
+      </label>
 
 
-    <label class="blocklabel">Select Portfolio</label>
-    <select id="portfolio" class="multiple-options" name="states[]" multiple="multiple">
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-      <option value="00100">00100</option>
-    </select>
-
-      <lable>
-      Select All
-     <input type="checkbox" id="selectall_2">
-     </lable>
-
-
-
-    <button id="button1"> Submit </button>
+      <button id="button1"> Submit </button>
 
     </fieldset>
 
-
-        <table id="sample1" class="example"  style="width:100%"></table>
-
-    <table>
+    <table id="datatable" class="example" style="width:100%"></table>
 
 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/b-1.5.2/b-flash-1.5.2/b-html5-1.5.2/b-print-1.5.2/datatables.min.js"></script>
+    
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function(){
+        let table = $('#datatable');
+        function arrayToTable(tableData) {
+          const table = $('#datatable');
+          const thead = $('<thead></thead>').prependTo(table);
+          const tbody = $('<tbody></tbody>').appendTo(table);
+          $(tableData).each(function (i, rowData) {
+            if(i === 0) {
+              let row = $('<tr></tr>');
+              $(rowData).each(function (j, cellData) {
+                 row.append($('<th>'+cellData+'</th>'));
+              });
+              thead.append(row);
+            } else {
+              let row = $('<tr></tr>');
+              $(rowData).each(function (j, cellData) {
+                if(cellData != '') {
+                 row.append($('<td>'+cellData+'</td>'));
+                }
+              });
+              if (row.children().length) {
+                tbody.append(row);
+              }
+            }
+          });
+          table.DataTable({
+            dom: 'Bfrtip',
+            buttons: ['pageLength', 'copy', 'csv', 'excel', 'pdf', 'print'],
+            lengthMenu: [[ 10, 25, 50, -1 ],[ '10 rows', '25 rows', '50 rows', '100 rows','Show all' ]]
+            
+       
+          
+          });
+            
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-<script  src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script  src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script  src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-<script  src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
-<script  src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script  src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-<script  src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-<script  src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-
-
-<script>
-    function arrayToTable(tableData) {
-        var table = $('<table  id="sample1"></table>');
-        $(tableData).each(function (i, rowData) {
-            var row = $('<tr></tr>');
-            $(rowData).each(function (j, cellData) {
-                row.append($('<td>'+cellData+'</td>'));
-            });
-            table.append(row);
+      }
+        
+        $.ajax({
+          type: "GET",
+          url: "data/Sample_Data.csv",
+          success: function (data) {
+            arrayToTable(Papa.parse(data).data);
+          }
         });
-        return table;
-    }
-    $.ajax({
-        type: "GET",
-        url: "data/Sample_Data.csv",
-        success: function (data) {
-            $('#sample1').append(arrayToTable(Papa.parse(data).data));
-        }
-    }).done(function(){
-            $('#sample1').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'pageLength', 'csv', 'excel', 'pdf', 'print'
-        ],
-        lengthMenu: [
-            [ 10, 25, 50, -1 ],
-            [ '10 rows', '25 rows', '50 rows', '100 rows','Show all']
-        ],
+        $('.multiple-options').select2();
+        $("#selectall").click(function(event){
+          event.stopPropagation();
+          if($("#selectall").is(':checked') ){
+            $("#account > option").prop("selected","selected");
+            $("#account").trigger("change");
+          } else {
+            $("#account").val(null).trigger('change');
+          }
+        });
+        $("#selectall_2").click(function(event){
+          event.stopPropagation();
+          if($("#selectall_2").is(':checked') ){
+            $("#portfolio > option").prop("selected","selected");
+            $("#portfolio").trigger("change");
+          } else {
+            $("#portfolio").val(null).trigger('change');
+          }
+        });
+        $("#button1").prop('disabled',true);
+        $('.multiple-options').change(function() {
+          if ($('.multiple-options').val() == 0) {
+            $("#button1").prop('disabled',true);
+          } else {
+            $("#button1").prop('disabled',false);
+          }
+        });
+        $("#account").change(function() {
+          if ($(this).data('options') === undefined) {
+            /*Taking an array of all options-2 and kind of embedding it on the select1*/
+            $(this).data('options', $('#portfolio option').clone());
+          }
+          var id = $(this).val();
+          var options = $(this).data('options').filter('[value=' + id + ']');
+          $('#portfolio').html(options);
+        });
+        
+        $('#button1').click(function () {
+        table.search($("#account").val()).draw();
+    });
 
-        bSort: false,
-                aoColumns: [ { sWidth: "45%" }, { sWidth: "45%" }, { sWidth: "10%", bSearchable: false, bSortable: false } ],
-                "scrollY":        "200px",
-                "scrollCollapse": true,
-                "info":           true,
-                "paging":         true
-    } );
-});
+
+    });
+
 </script>
-
-</body>
-
+   
+    
+  </body>
 </html>
