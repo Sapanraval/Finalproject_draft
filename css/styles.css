@@ -242,3 +242,39 @@ li.selected {
   width: 600px !important
 
 }
+
+.checkbox::after{
+
+  content: '';
+  width: 2rem;
+  height: 2re;
+  background-color: red;
+  display: block;
+  border: 1px solid blue;
+}
+
+#check::checked+label::after{
+  background-color: black;
+  content: "x";
+  color: white;
+}
+
+.dataTable td {
+  border-top: 0.5px solid #ccc;
+  border-right: 0.5px solid #ccc;
+  border-left: 0.5px solid #ccc;
+  border-bottom: 1px solid #ccc;
+
+}
+
+.dataTable th {
+  border-top: 0.5px solid #ccc;
+  border-right: 0.5px solid #ccc;
+  border-left: 0.5px solid #ccc;
+  border-bottom: 0.5px solid #ccc;
+  vertical-align: middle;
+}
+
+.dataTable {
+  vertical-align: middle;
+}
