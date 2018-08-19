@@ -190,9 +190,8 @@ $border-color : #564F4C; */
   box-sizing: border-box;
 }
 Body {
-  padding: .5em;
-  color: $text-color-dark;
-  background: $white;
+  padding: .1em;
+
 }
 
 label {
